@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="a">
+                <img src="{% static 'img/almacen.jpg' %}">
+            </div>
+            <div class="b">
+                <h1>Registrar Nuevo Usuario</h1>
+                <form method="POST" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                    <div class="field-wrapper">
+                        <label for="id_username">Username:</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="id_email">Email:</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="id_password1">Password:</label>
+                        {{ form.password1 }}
+                        <button type="button" class="info-button">?</button>
+                        <div class="help-text">
+                            <ul>
+                                <li>Your password can't be too similar to your other personal information.</li>
+                                <li>Your password must contain at least 8 characters.</li>
+                                <li>Your password can't be a commonly used password.</li>
+                                <li>Your password can't be entirely numeric.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="id_password2">Password confirmation:</label>
+                        {{ form.password2 }}
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit">Registrar</button>
+                        <a href="{% url 'login' %}" class="button">Volver a Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

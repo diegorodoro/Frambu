@@ -72,3 +72,98 @@ body{
 .b form button:active {
     transform: scale(0.95);
   }
+
+
+/*  */
+
+.b form button.login-button {    
+    background-color: #ccc; /* Color gris para el botón de Login */
+    color: black; /* Color de texto que asegura visibilidad */
+    cursor: pointer;
+    width: 100px;
+    margin: 5px 10px; /* Mantén los márgenes para la separación */
+    border-radius: 20px; /* Radio de borde para hacerlos uniformemente redondeados */
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.b form button.sign-up-button {
+    background-color: #007bff; /* Mantén el azul para el botón de Sign Up */
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    margin: 5px 10px; /* Mantén los márgenes para la separación */
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.b form button:hover {
+    opacity: 0.8; /* Efecto suave para hover */
+}
+
+.b form button:active {
+    transform: scale(0.95); /* Efecto para el clic */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center; /* Centra y evita saltos de línea */
+    align-items: center;
+    width: 100%; /* Se ajusta al ancho del contenedor */
+}
+
+
+
+
+.form-buttons {
+    display: flex;
+    justify-content: center; 
+}
+
+.info-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    top: -35px; 
+    right: -180px; 
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.info-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-button:focus, .info-button:active {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.help-text {
+    display: none; 
+    position: absolute;
+    width: 250px; 
+    background-color: #f9f9f9;
+    color: #000;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+
+.info-button:hover + .help-text {
+    display: block;
+}
+
