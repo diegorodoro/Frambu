@@ -1,0 +1,45 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}">
+ 
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="order_list">
+        <h1>Products List</h1>
+        
+        <table>
+            {%if products%}
+                <tr>
+                    <th>ID </th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                </tr>
+                {% for product in products%}
+                    <tr>
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.description}}</td>
+                        <td>${{product.price}}</td>
+                        <td>{{product.stock}}</td>
+                        <td>{{product.created_at}}</td>
+                        <td>{{product.updated_at}}</td>
+                        <td><a href="{% url 'product_update' product.pk %}"><img src="static/img/lapiz.png"></a></td>
+                    </tr>
+                {%endfor%}
+            {%endif%}
+        </table>
+     
+ 
+    </div>
+</body>
+</html>

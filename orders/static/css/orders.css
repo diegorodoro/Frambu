@@ -1,0 +1,120 @@
+body{
+    margin: 0%;
+}
+.order_list{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+.order_list img{
+    width: 15px;
+}
+.order_list table{
+    border-collapse: collapse;
+}
+.order_list th{
+    background-color: yellow;
+}
+.order_list tr:nth-child(odd) {
+    background-color: #a1a1a1;
+}
+ 
+.order_list table th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+.order_list table td:last-child{
+    border: 0px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+.option {
+    display: inline-flex;
+}
+.option a {
+    display: inline-flex;
+    margin-top: 20px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    background-color: #c6c5c5;
+    text-decoration: none;
+    color:black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px black solid;
+    font-family: sans-serif;
+}
+.option a:hover{
+    background-color:orange;
+    color: #fff;
+    border: 1px rgb(255, 255, 255) solid;
+    display: inline-flex;
+ 
+}
+ 
+ 
+h1,label,p{
+    font-family: sans-serif;
+    text-align: center;
+}
+ 
+ 
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.form form {
+    border-radius: 9px;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #e8e6e6;
+}
+.form input,select {
+    display: list-item;
+}
+.form form div{
+    text-align: center;
+}
+.form form div button{
+    font-family: sans-serif;
+    border-radius: 9px;
+    border: 1px solid black;
+}
+.form form div button:hover{
+    background-color: orange;
+    color: #fff;
+    border-color:orange
+}
+.form a{
+    margin-top: 20px;
+    background-color: #c6c5c5;
+    text-decoration: none;
+    color:black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px black solid;
+    font-family: sans-serif;
+}
+.form a:hover{
+    background-color:orange;
+    color: #fff;
+    border: 1px rgb(255, 255, 255) solid;
+ 
+}
+.card{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}

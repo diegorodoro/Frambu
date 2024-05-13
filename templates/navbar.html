@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <title>Inicio</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Orders 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'order_list' %}">View</a>
+            <a href="{% url 'order_create' %}">Add</a>
+            <a href="{% url 'order_update' %}">Edit</a>
+            <a href="{% url 'order_delete' %}">Delete</a>
+          </div>
+        </div> 
+
+        <div class="dropdown">
+          <button class="dropbtn">Products 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'product_list' %}">View</a>
+          </div>
+        </div> 
+
+        <div class="dropdown">
+          <button class="dropbtn">Clients 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'client_list' %}">View</a>
+            <a href="{% url 'client_create' %}">Add</a>
+            <a href="{% url 'client_update' %}">Edit</a>
+            <a href="{% url 'client_delete' %}">Delete</a>
+          </div>
+        </div>
+
+        {%if user.is_authenticated%}
+            <a href="{% url 'logout'%}"id="logout">Logout</a>
+        {%endif%}
+    </div>
+  </body>
+</html>

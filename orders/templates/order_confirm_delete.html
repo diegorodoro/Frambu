@@ -1,0 +1,28 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Order</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/orders.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+ 
+    <div class="form">
+        <h1>Delete Order</h1>
+        <p>Are you sure you want to delete the order "{{ order }}"?</p>
+        <form action="{% url 'order_deleted' order.pk %}" method="post">
+           
+            {% csrf_token %}
+            <div>
+                <button type="submit">Yes, Delete</button>
+            </div>
+           
+        </form>
+        <a href="{% url 'order_detail' order.pk %}">Cancel</a>
+    </div>
+   
+</body>
+</html>

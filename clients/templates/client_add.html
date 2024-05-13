@@ -1,0 +1,23 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add client</title>
+        <link rel="stylesheet"  href="{%static 'css/clients.css'%}">
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <h1>Add client</h1>
+        <form class="form-style-9" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+        <div class="options">
+            <button>Return</button>
+        </div>
+    </body>
+</html>

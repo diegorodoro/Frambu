@@ -1,0 +1,24 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Order Form{% endblock %}</title>
+    <link rel="stylesheet"  href="{%static 'css/orders.css'%}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>{% block heading %}Form order{% endblock %}</h1>
+    <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+        <a href="{% url 'order_list' %}">Cancel</a>
+    </div>
+</body>
+</html>

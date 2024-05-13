@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f8; /* Un fondo ligeramente más claro */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 2.2em; /* Un poco más grande para más énfasis */
+    color: #34495e; /* Un azul oscuro más suave */
+    margin-top: 30px; /* Más espacio en la parte superior */
+    margin-bottom: 30px; /* Espacio antes de las cartas */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrado para una mejor alineación */
+    padding: 20px;
+    gap: 20px; /* Espacio uniforme entre las cartas */
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más prominente para más profundidad */
+    margin: 10px;
+    padding: 25px; /* Más padding para más espacio interior */
+    width: calc(33% - 40px); /* Ajuste para incluir el gap */
+    border-radius: 10px; /* Bordes más redondeados */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+.card h3 {
+    color: #2c3e50;
+    font-size: 1.4em; /* Tamaño de fuente mayor */
+}
+
+.card p {
+    color: #62696d; /* Un gris más oscuro para mejor legibilidad */
+    font-size: 1.1em; /* Tamaño de fuente un poco mayor */
+    line-height: 1.6; /* Mejor espaciado de línea */
+    margin: 8px 0; /* Ajuste en los márgenes */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento al hacer hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 40px); /* Dos cartas por fila en tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Una carta por fila en móviles */
+    }
+}

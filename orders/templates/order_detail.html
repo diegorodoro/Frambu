@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/orders.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Order Detail</h1>
+    <div class="card">
+        <p><b>ID:</b> {{ order.id }}</p>
+        <p><b>State:</b> {{order.order_state}}</p>
+        <p><b>Product:</b> {{order.product}}</p>
+        <p><b>Created At:</b> {{ order.created_at }}</p>
+        <p><b>Total:</b> ${{order.total}}</p>
+        <p><b>Client: </b>{{order.client}}</p>
+
+        <div class="option">
+            <a href="{% url 'order_list' %}">Return</a>
+            <a href="{% url 'order_updated' order.id%}">Edit</a>
+            <a href="{% url 'order_deleted' order.id%}">Delete</a>      
+        </div>
+    </div>
+</body>
+</html>

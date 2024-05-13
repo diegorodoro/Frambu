@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clients.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Client Detail</h1>
+    <div class="card">
+        <p><b>ID:</b> {{ client.id }}</p>
+        <p><b>Name:</b> {{ client.company_name }}</p>
+        <p><b>Phone:</b> {{client.phone}}</p>
+        <p><b>E-mail:</b> {{client.email}}</p>
+
+        <div class="option">
+            <a href="{% url 'client_list' %}">Return</a>
+            <a href="{% url 'client_updated' client.id%}">Edit</a>
+            <a href="{% url 'client_deleted' client.id%}">Delete</a>      
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+    <title>Welcome Page</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1 class="welcome-message">Welcome back to Frambu, {{ user.username }}!</h1>
+    <div class="card-container">
+        {% if orders %}
+            {% for order in orders %}
+                <div class="card">
+                    <h3>Order ID: {{ order.id }}</h3>
+                    <p>Created: {{ order.created_at }}</p>
+                    <p>Product: {{ order.product }}</p>
+                    <p>Client: {{ order.client.company_name }}</p>
+                    <p>State: {{ order.order_state }}</p>
+                    <p>Quantity: {{ order.quantityRequested }}</p>
+                    <p>Total: $ {{ order.total }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No orders found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

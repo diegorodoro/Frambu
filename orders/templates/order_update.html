@@ -1,0 +1,48 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/orders.css' %}">
+ 
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="order_list">
+        <h1>Edit orders</h1>
+        <table>
+            {%if orders%}
+                <tr>
+                    <th>ID </th>
+                    <th>Created</th>
+                    <th>Product</th>
+                    <th>Client</th>
+                    <th>Current state</th>
+                    <th>Quantity Requested</th>
+                    <!-- <th>Total</th> -->
+                </tr>
+                {% for order in orders%}
+                    <tr>
+                        <td>{{order.id}}</td>
+                        <td>{{order.created_at}}</td>
+                        <td>{{order.product}}</td> 
+                        <td>{{order.client.company_name}}</td>
+                        <td>{{order.order_state}}</td>
+                        <td>{{order.quantityRequested}}</td> 
+                        <!-- <td>$ {{order.total}}</td>  -->
+                        <td><a href="{% url 'order_updated' order.pk %}"><img src="{%static 'img/lapiz.png' %}"></a></td>
+
+                    </tr>
+                {%endfor%}
+            {%endif%}
+        </table>
+        <div class="option">
+            <a href="{% url 'order_list' %}">Return</a>
+        </div>
+     
+ 
+    </div>
+</body>
+</html>

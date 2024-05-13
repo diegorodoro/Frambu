@@ -1,0 +1,41 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clients.css' %}">
+ 
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="order_list">
+        <h1>Delete clients</h1>
+        <table>
+            {%if clients%}
+                <tr>
+                    <th>ID </th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>E-mail</th>
+                </tr>
+                {% for client in clients%}
+                    <tr>
+                        <td>{{client.id}}</td>
+                        <td>{{client.company_name}}</td>
+                        <td>{{client.phone}}</td>
+                        <td>{{client.email}}</td>
+                        <td><a href="{% url 'client_deleted' client.pk %}"><img src="{%static 'img/trash.png' %}"></a></td>
+                    </tr>
+                {%endfor%}
+            {%endif%}
+        </table>
+        <div class="option">
+            <a href="{% url 'client_list' %}">Return</a>
+        </div>
+     
+ 
+    </div>
+</body>
+</html>

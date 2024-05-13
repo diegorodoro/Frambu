@@ -1,0 +1,29 @@
+{% load static %}
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Client</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clients.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+ 
+    <div class="form">
+        <h1>Delete Client</h1>
+        <p>Are you sure you want to delete the client "{{ client }}"?</p>
+        <form action="{% url 'client_deleted' client.pk %}" method="post">
+           
+            {% csrf_token %}
+            <div>
+                <button type="submit">Yes, Delete</button>
+            </div>
+           
+        </form>
+        <a href="{% url 'client_detail' client.pk %}">Cancel</a>
+    </div>
+   
+</body>
+</html>
