@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7^=0t@4zk*@^1y!8n+*!2srxxdt%+ztqgp817js$*fuq(g(w0*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['frambu.onrender.com',]
 
 
 # Application definition
