@@ -17,9 +17,12 @@
 
         <div class="option">
             <a href="{% url 'client_list' %}">Return</a>
-            <a href="{% url 'client_updated' client.id%}">Edit</a>
-            <a href="{% url 'client_deleted' client.id%}">Delete</a>      
+            <a href="{% url 'client_updated' client.pk%}">Edit</a>
+            <a href="{% url 'client_deleted' client.pk%}">Delete</a>      
         </div>
     </div>
+   
+   
+ 
 </body>
 </html>

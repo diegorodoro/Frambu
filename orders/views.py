@@ -8,14 +8,14 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from .serializers import OrderSerializers, OrderSerializers2
  
-
+# Create your views here.
 @login_required
 def home(request):
     list=[]
     
     orders = Order.objects.all()
     products = Product.objects.all()
-
+    # orders = Order.objects.all().select_related('client')
 
     for i in orders:
         total=0
@@ -41,7 +41,7 @@ def order_list(request):
     
     orders = Order.objects.all()
     products = Product.objects.all()
-    
+    # orders = Order.objects.all().select_related('client')
 
     for i in orders:
         total=0
@@ -135,6 +135,10 @@ class OrderAPIView(generics.ListCreateAPIView):
             print(order_id)
 
             order = Order.objects.get(id=order_id)
+            # order.order_state = 'ready'
+            # order.save()
+
+            # Actualizar el estado de la orden si está pagada
 
             if order.is_paid:
                 print('esta pagada')

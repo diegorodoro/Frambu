@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
 from .forms import ProductForm
 
+# Views for Products
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'product_list.html', {'products': products})

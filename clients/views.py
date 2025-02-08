@@ -3,6 +3,7 @@ from .models import Client
 from .forms import ClientForm
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def client_list(request):
     clients = Client.objects.all()
@@ -27,7 +28,7 @@ def client_create(request):
 @login_required
 def client_update(request):
     client = Client.objects.all()
-    return render(request, 'client_update.html', {'clients': client})
+    return render(request, 'client_update.html', {'client': client})
  
 @login_required
 def client_updated(request, pk):
@@ -44,7 +45,7 @@ def client_updated(request, pk):
 @login_required
 def client_delete(request):
     client = Client.objects.all()
-    return render(request, 'client_delete.html', {'clients': client})
+    return render(request, 'client_delete.html', {'client': client})
  
 @login_required
 def client_deleted(request, pk):
